@@ -26,7 +26,7 @@ namespace Cinemapravc.Controllers
             {
                 _context.Usuarios.Add(Usuarios);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Home");
+                return RedirectToAction("Homepage");
             }
             return View(Usuarios);
         }
