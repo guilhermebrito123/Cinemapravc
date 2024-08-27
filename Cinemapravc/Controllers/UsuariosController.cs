@@ -15,6 +15,11 @@ namespace Cinemapravc.Controllers
             return View();
         }
 
+        public ActionResult Homepage()
+        {
+            return View();
+        }
+
         public ActionResult Create()
         {
             return View();

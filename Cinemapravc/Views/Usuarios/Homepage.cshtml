@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/cssUsuarios/Homepage.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="row justify-content-center" style="width:100%;">
+       <nav class="navbar col-11 bg-transparent">
+          <i class="bi-info-circle-fill align-content-center fs-2"> Cinemapravc</i>
+       </nav>
+    </div>
+    <hr>
+    <div class="row justify-content-center mt-2" style="width: 100%">
+        <img class="img-fluid col-4 align-content-center" src="~/img/fitaFilmes.png" alt="Alternate Text" />
+        <div class="col-4 align-content-center">
+            <h1 class="text-end">Encontre infos sobre filmes</h1>
+            <h5 class="fst-italic text-end">Aqui você encontra informações sobre filmes e seus diretores de todos os gêneros!</h5>
+            <div class="row justify-content-end">
+               <a asp-action="Create" class="btn btn-outline-primary col-3">Crie uma conta</a>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
