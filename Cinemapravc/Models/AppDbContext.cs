@@ -8,6 +8,7 @@ namespace Cinemapravc.Models
 
         public DbSet<Filme> Filmes { get; set; }
         public DbSet<Genero> Generos { get; set; }
+        public DbSet<Diretor> Diretores { get; set; }
 
     }
 }

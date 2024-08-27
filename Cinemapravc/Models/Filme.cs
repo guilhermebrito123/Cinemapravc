@@ -22,5 +22,9 @@ namespace Cinemapravc.Models
 
         [ForeignKey("GeneroId")]
         public Genero Genero { get; set; }
+        public int DiretorId { get; set; }
+
+        [ForeignKey("DiretorId")]
+        public Diretor Diretor { get; set; }
     }
 }
