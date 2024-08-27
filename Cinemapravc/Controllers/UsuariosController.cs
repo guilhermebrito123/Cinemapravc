@@ -14,5 +14,21 @@ namespace Cinemapravc.Controllers
         {
             return View();
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Create(Usuario Usuarios)
+        {
+            if(ModelState.IsValid)
+            {
+                _context.Usuarios.Add(Usuarios);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Home");
+            }
+            return View(Usuarios);
+        }
     }
 }   
