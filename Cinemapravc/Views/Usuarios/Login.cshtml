@@ -1,0 +1,49 @@
+﻿    @model Cinemapravc.Models.Usuario
+
+    @{
+        Layout = null;
+    }
+
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Login</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/cssUsuarios/Login.css" />
+    </head>
+    <body>
+    <h1 class="text-center mt-3">Entre</h1>
+    <hr />
+        <div class="row justify-content-center"> 
+        <img src="~/img/cadastro.svg" class="img-fluid col-4" alt="Imagem de cadastro" />        
+        <div class="col-4 align-content-center">
+            <form asp-action="Login">
+                <fieldset class="fst-italic fs-2">Faça login:</fieldset>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>            
+                <div class="form-group form-floating mb-3 border-1 shadow-lg">
+                    <input asp-for="Email" class="form-control" placeholder=" " />
+                    <label asp-for="Email" class="control-label"></label>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group form-floating mb-5 border-1 shadow-lg">
+                    <input asp-for="Senha" class="form-control" placeholder=" " />
+                    <label asp-for="Senha" class="control-label"></label>
+                    <span asp-validation-for="Senha" class="text-danger"></span>
+                </div>            
+                <div class="form-group text-center">
+                        <input type="submit" value="Entrar" class="btn btn-outline-primary col-3 mb-5 shadow-lg" />
+                </div>
+            </form>
+                <div class="text-center">
+                    <p class="fst-italic fs-3">Ainda não possui uma conta? <a asp-action="Create" class="btn btn-secondary text-bg-secondary col-3 fs-3">Cadastre-se</a></p>
+                </div>
+        </div>
+    </div>
+
+
+
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+    </html>

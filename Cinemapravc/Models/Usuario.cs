@@ -35,7 +35,7 @@ namespace Cinemapravc.Models
         [Display(Name = "TipoUsuario")]
         public TipoUsuario Tipo { get; set;}
 
-    public enum TipoUsuario
+        public enum TipoUsuario
     {
         Admin,
         User
