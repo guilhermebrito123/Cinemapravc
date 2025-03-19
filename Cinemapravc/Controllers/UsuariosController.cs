@@ -30,8 +30,17 @@ namespace Cinemapravc.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Usuario Usuarios)
         {
-            if(ModelState.IsValid)
+
+            if (ModelState.IsValid)
             {
+                var usuarioExistente = await _context.Usuarios.FirstOrDefaultAsync(u => u.CPF == Usuarios.CPF);
+
+                if(usuarioExistente != null)
+                {
+                    ViewBag.Message = "CPF já cadastrado";
+                    return View();
+                }
+
                 Usuarios.Senha = BCrypt.Net.BCrypt.HashPassword(Usuarios.Senha);
                 _context.Usuarios.Add(Usuarios);
                 await _context.SaveChangesAsync();
@@ -52,11 +61,13 @@ namespace Cinemapravc.Controllers
 
             if (dados == null)
             {
-                ViewBag.Message = "Email ou senha inválidos";
+                ViewBag.Message = "Email e Senha obrigatórios!";
                 return View();
             }
+
             bool senhaOK = BCrypt.Net.BCrypt.Verify(Usuarios.Senha, dados.Senha);
-            if(senhaOK)
+
+            if (senhaOK)
             {
                 var claims = new List<Claim>
                 {
@@ -80,7 +91,7 @@ namespace Cinemapravc.Controllers
             }
             else
             {
-                ViewBag.Message = "Email ou senha inválidos";
+                ViewBag.Message = "senha inválida";
                 return View();
             }
         }
