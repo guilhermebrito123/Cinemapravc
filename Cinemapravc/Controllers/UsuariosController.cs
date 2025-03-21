@@ -95,5 +95,10 @@ namespace Cinemapravc.Controllers
                 return View();
             }
         }
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            return View("Login", "Usuarios");
+        }
     }
 }   
