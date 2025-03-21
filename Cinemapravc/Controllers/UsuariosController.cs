@@ -98,7 +98,7 @@ namespace Cinemapravc.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
-            return View("Login", "Usuarios");
+            return RedirectToAction("Login", "Usuarios");
         }
     }
 }   
