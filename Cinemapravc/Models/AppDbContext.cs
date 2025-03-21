@@ -11,6 +11,6 @@ namespace Cinemapravc.Models
         public DbSet<Genero> Generos { get; set; }
         public DbSet<Diretor> Diretores { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
-
+            
     }
 }

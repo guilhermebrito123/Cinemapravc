@@ -11,8 +11,8 @@ namespace Cinemapravc.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Campo obrigatório!")]
-        [Display(Name = "Descricao")]
-        public string Descricao { get; set; }
+        [Display(Name = "Nome")]
+        public string Nome { get; set; }
         public ICollection <Filme> Filme { get; set; }
     }
 }

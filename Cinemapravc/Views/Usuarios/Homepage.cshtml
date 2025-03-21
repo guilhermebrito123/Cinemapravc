@@ -19,8 +19,11 @@
           <i class="bi-info-circle-fill align-content-center fs-2 col-3 text-center"> Cinemapravc</i>
             @if (User.Identity.IsAuthenticated)
             {
-                <div class="col-8 text-end">
+                <div class="col-7 text-end">
                     Olá, @User.Identity.Name
+                </div>
+                <div class="col-1 text-end text-danger">
+                    <a asp-controller="Usuarios" asp-action="Logout" class="bi bi-box-arrow-left"></a>
                 </div>
             }
         </nav>
@@ -37,5 +40,7 @@
         </div>
     </div>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
